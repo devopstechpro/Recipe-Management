@@ -6,8 +6,43 @@ on:
       - main
 
 jobs:
+  semantic-release:
+    runs-on: ubuntu-latest
+    environment:
+      name: semvar
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v3
+        with:
+          branches: |
+            [
+              '+([0-9])?(.{+([0-9]),x}).x',
+              'main',
+              'master',
+              'next',
+              'next-major',
+              {
+                name: 'beta',
+                prerelease: true
+              },
+              {
+                name: 'alpha',
+                prerelease: true
+              }
+            ]
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+
   build-and-push-backend:
     runs-on: ubuntu-latest
+    needs: semantic-release
     environment:
       name: main
     steps:
@@ -32,7 +67,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Login to Amazon ECRg
+      - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
 
@@ -47,9 +82,9 @@ jobs:
 
   build-and-push-frontend:
     runs-on: ubuntu-latest
+    needs: semantic-release
     environment:
       name: main
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -83,39 +118,3 @@ jobs:
         run: |
           docker tag frontend-app:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-
-  semantic-release:
-    runs-on: ubuntu-latest
-    needs:
-      - build-and-push-frontend
-      - build-and-push-backend
-    environment:
-      name: semvar
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v3
-        with:
-          branches: |
-            [
-              '+([0-9])?(.{+([0-9]),x}).x',
-              'main',
-              'master',
-              'next',
-              'next-major',
-              {
-                name: 'beta',
-                prerelease: true
-              },
-              {
-                name: 'alpha',
-                prerelease: true
-              }
-            ]
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
