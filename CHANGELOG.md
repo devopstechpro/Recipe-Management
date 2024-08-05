@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.3...v1.0.4) (2024-08-05)
+
+
+### Bug Fixes
+
+* pipeline name ([478d332](https://github.com/devopstechpro/Recipe-Management/commit/478d3328c347cb7a2deb4113ad1a86bd3f68f5e4))
+
 ## [1.0.3](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.2...v1.0.3) (2024-08-05)
 
 
