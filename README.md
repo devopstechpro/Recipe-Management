@@ -8,6 +8,8 @@ The project has backend java application with mongodb and a frontend nodejs appl
 Pre-requiste:
 - Docker installed
 
+Each microservice BE and FE has a `Dockerfile` which when testing locally can be build using Docker Compose.
+
 Build frontend and backend image using docker compose.
 
 `docker-compose build`
@@ -19,6 +21,7 @@ Run frontend and backend image using docker compose.
 Kill frontend and backend
 
 `docker-compose down` or on windows/macos/linux `CRTL X` 
+
 
 ## CI/CD
 
