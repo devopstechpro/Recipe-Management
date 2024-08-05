@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.0...v1.0.1) (2024-08-05)
+
+
+### Bug Fixes
+
+* jdk version + set build env var ([7b95fed](https://github.com/devopstechpro/Recipe-Management/commit/7b95fed82bcb1ad22d878c8d0d511763283d66d6))
+
 # 1.0.0 (2024-08-05)
 
 
