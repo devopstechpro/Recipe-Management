@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.1...v1.0.2) (2024-08-05)
+
+
+### Bug Fixes
+
+* aws ecr action version ([c0375f3](https://github.com/devopstechpro/Recipe-Management/commit/c0375f33bb32fe01994dda219297055a18025323))
+* change semantic-release job order + fix ecr login version ([8a9cd70](https://github.com/devopstechpro/Recipe-Management/commit/8a9cd706a82508b264f3dd0563171de8fbf8a785))
+* publish semvar version at first ([2a797d5](https://github.com/devopstechpro/Recipe-Management/commit/2a797d5413ae17b65c208ad002ee2cb87c298d29))
+
 ## [1.0.1](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.0...v1.0.1) (2024-08-05)
 
 
