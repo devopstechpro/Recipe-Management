@@ -1,4 +1,4 @@
-name: Build and Deploy to ECR
+name: Build and Deploy to ECR with semantic release versioning
 
 on:
   push:
