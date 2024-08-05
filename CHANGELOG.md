@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.2...v1.0.3) (2024-08-05)
+
+
+### Bug Fixes
+
+* export new_release_version as output ([3ccfec3](https://github.com/devopstechpro/Recipe-Management/commit/3ccfec3bd0a4fc3cb6444b218af5cfa2e9432612))
+
 ## [1.0.2](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.1...v1.0.2) (2024-08-05)
 
 
