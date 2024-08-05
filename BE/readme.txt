@@ -1,4 +1,4 @@
-1. execute: mvnw spring-boot:run
+1. execute: mvn spring-boot:run
  - This will compile and run the web service using the properties defined in application.properties (located in src/main/resources).
 
 4. It can be accessed on http://localhost:8080

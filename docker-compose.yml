@@ -1,0 +1,42 @@
+version: '3'
+services:
+  backend:
+    depends_on:
+    - mongo_db
+    build:
+      context: ./BE
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      databaseUrl: mongodb://root:123456@mongo_db:27017/ead_ca2?authSource=admin
+      databaseName: ead_ca2
+      databaseCollection: ead_2024
+    volumes:
+      - .m2:/root/.m2
+  frontend:
+    depends_on:
+    - backend
+    build:
+      context: ./FE
+      dockerfile: ./Dockerfile
+    environment:
+     exposedPort: "22137"
+     webservice_host": "backend"
+     webservice_port": "8080"
+    ports:
+      - 22137:22137
+  mongo_db:
+    image: mongo:5.0.28
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: "123456"
+      MONGODB_DATABASE: ead_ca2
+      MONGO_DATABASE_COLLECTION: ead_2024
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+
+volumes:
+  mongodb:
