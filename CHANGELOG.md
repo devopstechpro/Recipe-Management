@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.4...v1.0.5) (2024-08-10)
+
+
+### Bug Fixes
+
+* alignment ([785974f](https://github.com/devopstechpro/Recipe-Management/commit/785974f52d0be15c329d35001ab79c4191fb1998))
+
 ## [1.0.4](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.3...v1.0.4) (2024-08-05)
 
 
