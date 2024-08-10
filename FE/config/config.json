@@ -2,7 +2,7 @@
 	"development": {
         "config_id": "development",
         "app_name": "Recipe Tracker",
-	"webservice_host": "tcp://backend.test-service-connect:8080",
+	"webservice_host": "backend.test-service-connect",
 	"webservice_port": "8080",
 	"exposedPort": "22137"
 	}
