@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.7...v1.1.0) (2024-08-10)
+
+
+### Bug Fixes
+
+* config var ([091e103](https://github.com/devopstechpro/Recipe-Management/commit/091e1036b4b94a671c8beb3f389d86e5113dc016))
+
+
+### Features
+
+* add infra code ([045ad6e](https://github.com/devopstechpro/Recipe-Management/commit/045ad6eddfcf0e1aa69ed12fd1864ab8c8d7cff2))
+
 ## [1.0.7](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.6...v1.0.7) (2024-08-10)
 
 
