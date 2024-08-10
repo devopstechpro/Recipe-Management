@@ -5,6 +5,7 @@ var fs = require('fs');
 
 //Loading the config fileContents
 const config = require('./config/config.json');
+const { hostname } = require('os');
 const defaultConfig = config.development;
 global.gConfig = defaultConfig;
 

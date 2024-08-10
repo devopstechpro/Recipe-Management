@@ -24,7 +24,7 @@ services:
     environment:
     # Pass variables to FE app
      exposedPort: 22137
-     webservice_host": backend
+     webservice_host": "backend.test-service-connect"
      webservice_port": 8080
     ports:
       - 22137:22137

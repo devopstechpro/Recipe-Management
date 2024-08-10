@@ -76,7 +76,7 @@ jobs:
       - name: Build, tag, and push Backend Docker image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: backend
+          ECR_REPOSITORY: recipe-mgt/backend
           IMAGE_TAG: ${{ needs.semantic-release.outputs.new_release_version }}
         run: |
           docker tag backend-app:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
@@ -115,8 +115,39 @@ jobs:
       - name: Build, tag, and push Frontend Docker image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: frontend
+          ECR_REPOSITORY: recipe-mgt/frontend
           IMAGE_TAG: ${{ needs.semantic-release.outputs.new_release_version }}
         run: |
           docker tag frontend-app:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+  # terraform:
+  #   runs-on: ubuntu-latest
+  #   needs: semantic-release
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v3
+
+  #   - name: Set up Terraform
+  #     uses: hashicorp/setup-terraform@v2
+  #     with:
+  #       terraform_version: 1.5.0
+
+  #   - name: Configure AWS credentials
+  #     uses: aws-actions/configure-aws-credentials@v2
+  #     with:
+  #       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #       aws-region: us-east-1
+
+  #   - name: Terraform Init
+  #     run: terraform init
+
+  #   - name: Terraform Plan
+  #     env:
+  #       IMAGE_TAG: ${{ needs.semantic-release.outputs.new_release_version }}
+  #     run: terraform plan -chdir=infra/ -var 'backend_image_version=${IMAGE_TAG}' -var 'frontend_image_version=${IMAGE_TAG}' -out=tfplan --variable
+
+  #   - name: Terraform Apply
+  #     if: github.ref == 'refs/heads/main'
+  #     run: terraform apply -chdir=infra/ -var 'backend_image_version=${IMAGE_TAG}' -var 'frontend_image_version=${IMAGE_TAG}' -input=false tfplang

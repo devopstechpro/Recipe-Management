@@ -2,7 +2,6 @@
 
 The project has backend java application with mongodb and a frontend nodejs application.
 
-
 ## Local development and testing
 
 Pre-requiste:
@@ -38,6 +37,21 @@ The Github workflow pipeline depends on two types of Github Repo Environments:
 Please create environment state above before proceed to next step.
 
 
-## Deploy image to ECS Fargate (Pending)
+## Deploy image to ECS Fargate
 
 Publish semantic release version to ECS task defination to deploy new version of Docker images.
+
+Deploy code using terraform localy:
+
+*Pre-req:*
+1. Install `terraform` on local system
+2. Create backend and update `backend.tf` (only required for first time - I already did it)
+
+*Run terraform from directory `infra`:*
+
+1. Initialize terrafrom code: `terraform init`
+2. Validate terraform code: `terraform validate`
+3. Format terraform code: `terraform fmt`
+4. Plan the code: `terraform plan`
+5. Apply the code: `terraform apply`
+6. Destroy the code: `terraform destroy` - Be-careful while doing this on production systems.
