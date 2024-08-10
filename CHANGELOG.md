@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.6...v1.0.7) (2024-08-10)
+
+
+### Bug Fixes
+
+* webservice_host ([645332e](https://github.com/devopstechpro/Recipe-Management/commit/645332e9c21803f0bef370e38ec64c9bf7742aa3))
+
 ## [1.0.6](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.5...v1.0.6) (2024-08-10)
 
 
