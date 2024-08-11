@@ -5,21 +5,23 @@ The project has backend java application with mongodb and a frontend nodejs appl
 ## Local development and testing
 
 Pre-requiste:
-- Docker installed
+- Install Docker on your system
 
-Each microservice BE and FE has a `Dockerfile` which when testing locally can be build using Docker Compose.
+You can install run application using docker environment or Dockerfile that is present in each microservice `BE` and `FE`. 
 
-Build frontend and backend image using docker compose.
+To build and run application using Docker compose.
 
-`docker-compose build`
+Go to main location in directory where `docker-compose.yml` file is situated there run following commands in terminal:
 
-Run frontend and backend image using docker compose.
+1. Build frontend and backend image using docker compose.
+   `docker-compose build`
 
-`docker-compose up`
+2. Run application frontend and backend image using docker compose.
+   `docker-compose up`
 
-Kill frontend and backend
+3. Once the docker-compose is runnig you can access application in browser by typing `http://localhost:22137`
 
-`docker-compose down` or on windows/macos/linux `CRTL X` 
+4. To stop or kill running docker-compose application `CRTL + X` or `CRTL + X` on keyboard.
 
 
 ## CI/CD
