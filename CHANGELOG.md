@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/devopstechpro/Recipe-Management/compare/v1.1.0...v1.1.1) (2024-08-11)
+
+
+### Bug Fixes
+
+* update readme ([1116d4d](https://github.com/devopstechpro/Recipe-Management/commit/1116d4d61aebaf6c712a1385a9c132aab9775e0f))
+
 # [1.1.0](https://github.com/devopstechpro/Recipe-Management/compare/v1.0.7...v1.1.0) (2024-08-10)
 
 
