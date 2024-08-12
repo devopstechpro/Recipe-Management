@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/devopstechpro/Recipe-Management/compare/v1.1.1...v1.1.2) (2024-08-12)
+
+
+### Bug Fixes
+
+* ecr repo name ([fa5e48e](https://github.com/devopstechpro/Recipe-Management/commit/fa5e48ee88be8dcbf1b839da24d21ac506b52999))
+
 ## [1.1.1](https://github.com/devopstechpro/Recipe-Management/compare/v1.1.0...v1.1.1) (2024-08-11)
 
 
