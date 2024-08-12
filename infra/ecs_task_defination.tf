@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "frontend_task" {
   container_definitions = jsonencode([
     {
       name      = "frontend"
-      image     = "022499035884.dkr.ecr.us-east-1.amazonaws.com/frontend:${var.frontend_image_version}"
+      image     = "022499035884.dkr.ecr.us-east-1.amazonaws.com/recipe-mgt/frontend:${var.frontend_image_version}"
       essential = true
 
       portMappings = [
@@ -56,7 +56,7 @@ resource "aws_ecs_task_definition" "backend_task" {
   container_definitions = jsonencode([
     {
       name      = "backend"
-      image     = "022499035884.dkr.ecr.us-east-1.amazonaws.com/backend:${var.backend_image_version}"
+      image     = "022499035884.dkr.ecr.us-east-1.amazonaws.com/recipe-mgt/frontend:${var.backend_image_version}"
       essential = true
 
       portMappings = [
